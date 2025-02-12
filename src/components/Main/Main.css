@@ -1,0 +1,145 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Full-page Background */
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #f4f1ea, #dcd3c9);
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+/* Main Container */
+.main {
+  text-align: center;
+  width: 100%;
+  max-width: 1300px;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+/* Header */
+.schedguru {
+  font-family: "Inria Sans", serif;
+  font-weight: 700;
+  font-size: 90px;
+  font-style: normal;
+  color: #343a40;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+  animation: popIn 1s ease-out;
+}
+
+/* Quote */
+.blockquote {
+  font-style: italic;
+  font-size: 1.3rem;
+  color: #6c757d;
+  font-weight: 500;
+  opacity: 0.75;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+}
+
+.nav-links li {
+  display: inline-block;
+}
+
+.nav-links a {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  color: white;
+}
+
+/* Navigation Link Colors */
+.nav-links .faculty {
+  background: #007bff;
+}
+
+.nav-links .rooms {
+  background: #28a745;
+}
+
+.nav-links .admin {
+  background: #dc3545;
+}
+
+.nav-links .login {
+  background: #ffc107;
+}
+
+/* Hover Effect */
+.nav-links a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .schedguru {
+    font-size: 2.5rem;
+  }
+
+  .blockquote {
+    font-size: 1.1rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-links a {
+    width: 100%;
+    text-align: center;
+  }
+}

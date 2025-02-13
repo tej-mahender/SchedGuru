@@ -3,7 +3,7 @@ import './Main.css'
 import { Link } from 'react-router-dom'
 function Main() {
   return (
-      <div className="main d-flex flex-column">
+      <div className="main">
        <nav>
       <ul className="nav-links">
         <li className='faculty me-2'><Link to="/faculty">Faculty</Link></li>

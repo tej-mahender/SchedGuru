@@ -15,7 +15,7 @@
     background: linear-gradient(135deg, #f5f7fa);
   }
   
-  .faculty {
+  .faculty .back .date {
     background: white;
     padding: 30px;
     border-radius: 12px;

@@ -1,14 +1,21 @@
-/* Faculty Page Styling */
-.faculty-container {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Faculty Page Styling */
+  .faculty-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    width:100vw;
+    width: 100vw;
     background: linear-gradient(135deg, #f5f7fa);
   }
   
-  .faculty{
+  .faculty {
     background: white;
     padding: 30px;
     border-radius: 12px;
@@ -36,6 +43,45 @@
     margin-top: 10px;
   }
   
+  /* Faculty Navigation */
+  .faculty-container .nav-links {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+  }
+  .faculty-container .nav-links li {
+    display: inline-block;
+  }
+  
+  /* Faculty Page Buttons */
+  .faculty-container .nav-links a {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    color: white;
+  }
+  .faculty-container .nav-links .back {
+    background: #007bff;
+  }
+  
+  .faculty-container .nav-links .date {
+    background:#dc3545;
+  }
+  
+  /* Hover Effect */
+  .faculty-container .nav-links a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
   /* Animation */
   @keyframes fadeIn {
     from {

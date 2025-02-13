@@ -36,6 +36,10 @@ const browserRouter = createBrowserRouter([
         path: "/admin",
         element:<Admin /> 
       },
+      {
+        path: "/back",
+        element:<Main/> 
+      },
     ],
   },
 ]);

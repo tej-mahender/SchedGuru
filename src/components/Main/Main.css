@@ -4,8 +4,6 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
-
-/* Full-page Background */
 body {
   height: 100vh;
   display: flex;
@@ -15,7 +13,6 @@ body {
   background-attachment: fixed;
   overflow: hidden;
 }
-
 /* Main Container */
 .main {
   text-align: center;
@@ -51,7 +48,7 @@ body {
 }
 
 /* Navigation Links */
-.nav-links {
+.main .nav-links {
   display: flex;
   gap: 15px;
   margin-top: 20px;
@@ -60,11 +57,11 @@ body {
   padding: 0;
 }
 
-.nav-links li {
+.main .nav-links li {
   display: inline-block;
 }
 
-.nav-links a {
+.main .nav-links a {
   display: inline-block;
   padding: 12px 24px;
   font-size: 1rem;
@@ -77,24 +74,24 @@ body {
 }
 
 /* Navigation Link Colors */
-.nav-links .faculty {
+.main .nav-links .faculty {
   background: #007bff;
 }
 
-.nav-links .rooms {
+.main .nav-links .rooms {
   background: #28a745;
 }
 
-.nav-links .admin {
+.main .nav-links .admin {
   background: #dc3545;
 }
 
-.nav-links .login {
+.main .nav-links .login {
   background: #ffc107;
 }
 
 /* Hover Effect */
-.nav-links a:hover {
+.main .nav-links a:hover {
   transform: translateY(-3px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }

@@ -14,7 +14,17 @@
     width: 100vw;
     background: linear-gradient(135deg, #f5f7fa);
   }
-  
+  .faculty-div{
+text-align: center;
+  width: 100%;
+  max-width: 700px;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  animation: fadeIn 1.2s ease-in-out;
+  }
   .faculty .back .date {
     background: white;
     padding: 30px;

@@ -9,6 +9,7 @@ import Faculty from './components/Faculty/Faculty'
 import Admin from './components/Admin/Admin'
 import Login from './components/Login/Login'
 import Rooms from './components/Rooms/Rooms'
+import Date from './components/Date/Date'
 import 'bootstrap/dist/css/bootstrap.min.css';
 const browserRouter = createBrowserRouter([
   {
@@ -39,6 +40,10 @@ const browserRouter = createBrowserRouter([
       {
         path: "/back",
         element:<Main/> 
+      },
+      {
+        path: "/date",
+        element:<Date/> 
       },
     ],
   },

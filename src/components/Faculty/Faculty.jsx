@@ -13,7 +13,7 @@ function Faculty() {
              <li className='date me-2'><Link to="/date">Date</Link></li>
            </ul>
          </nav>
-      <div className="faculty-1">
+      <div className="faculty-div">
         <h1 className="faculty-title">Faculty</h1>
         <p className="faculty-subtext">Search for faculty members and view their details & schedules.</p>
         <div className="search-bar">

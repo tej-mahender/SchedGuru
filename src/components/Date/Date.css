@@ -1,57 +1,7 @@
-/* Wrapper to center the content */
-.date-period-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding: 20px 0;
-}
-
-/* Container for date and period selection */
-.date-period-container {
-    display: flex;
-    gap: 15px;
-    background: #f8f9fa;
-    padding: 12px 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Styling for Date Picker */
-.date-picker {
-    padding: 10px;
-    font-size: 1rem;
-    border: 2px solid #007bff;
-    border-radius: 8px;
-    outline: none;
-    transition: all 0.3s ease-in-out;
-}
-
-.date-picker:hover,
-.date-picker:focus {
-    border-color: #0056b3;
-    box-shadow: 0 0 8px rgba(0, 91, 187, 0.3);
-}
-
-/* Styling for Period Selector */
-.period-selector {
-    padding: 10px;
-    font-size: 1rem;
-    border: 2px solid #28a745;
-    border-radius: 8px;
-    background: white;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-}
-
-.period-selector:hover,
-.period-selector:focus {
-    border-color: #218838;
-    box-shadow: 0 0 8px rgba(40, 167, 69, 0.3);
-}
-
-/* Improving option readability */
-.period-selector option {
-    font-size: 1rem;
-    padding: 5px;
-}
+button {
+    transition: background 0.3s ease-in-out;
+  }
+  button:hover {
+    opacity: 0.8;
+  }
+  

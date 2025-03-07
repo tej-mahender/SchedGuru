@@ -1,7 +1,144 @@
-button {
-    transition: background 0.3s ease-in-out;
-  }
-  button:hover {
-    opacity: 0.8;
-  }
-  
+/* Global Styling */
+.date-selector-container {
+  background-color: #f9fafb;
+  font-family: "Poppins", sans-serif;
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+/* Title */
+.date-selector-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Day Selection */
+.date-selector-days {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.date-selector-day-btn {
+  padding: 12px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  border: 2px solid #d1d5db;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  background: #e5e7eb;
+  color: #333;
+}
+
+.date-selector-day-btn:hover {
+  background: #d1d5db;
+}
+
+.date-selector-day-btn.active {
+  background: #2563eb;
+  color: white;
+  border-color: #2563eb;
+}
+
+/* Period Selection */
+.date-selector-periods {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.date-selector-period-btn {
+  width: 48px;
+  height: 48px;
+  font-size: 16px;
+  font-weight: 600;
+  border: 2px solid #d1d5db;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  background: #e5e7eb;
+  color: #333;
+}
+
+.date-selector-period-btn:hover {
+  background: #d1d5db;
+}
+
+.date-selector-period-btn.active {
+  background: #10b981;
+  color: white;
+  border-color: #10b981;
+}
+
+/* Fetch Button */
+.date-selector-fetch-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 14px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.date-selector-fetch-btn:hover {
+  background: #1e40af;
+}
+
+/* Error Message */
+.date-selector-error {
+  color: #dc2626;
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* Faculty List */
+.date-selector-faculty-list {
+  margin-top: 20px;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.date-selector-faculty-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.date-selector-faculty-item {
+  padding: 10px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.date-selector-faculty-item:last-child {
+  border-bottom: none;
+}
+
+.date-selector-faculty-name {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.date-selector-faculty-details {
+  font-size: 14px;
+  color: #6b7280;
+}

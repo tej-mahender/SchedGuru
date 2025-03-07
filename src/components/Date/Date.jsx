@@ -3,24 +3,20 @@ import axios from "axios";
 import "./Date.css";
 
 const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-const periods = [1, 2, 3, 4, 5, 6]; // Periods as selectable boxes
+const periods = [1, 2, 3, 4, 5, 6];
 
-function DateSelector() {
+function Date() {
   const [selectedDay, setSelectedDay] = useState(null);
-  const [selectedPeriods, setSelectedPeriods] = useState([]); // Allow multiple selections
+  const [selectedPeriods, setSelectedPeriods] = useState([]);
   const [facultyList, setFacultyList] = useState([]);
   const [error, setError] = useState(null);
 
-  // Toggle period selection
   const togglePeriod = (period) => {
-    setSelectedPeriods((prevSelected) =>
-      prevSelected.includes(period)
-        ? prevSelected.filter((p) => p !== period) // Remove if already selected
-        : [...prevSelected, period] // Add if not selected
+    setSelectedPeriods((prev) =>
+      prev.includes(period) ? prev.filter((p) => p !== period) : [...prev, period]
     );
   };
 
-  // Fetch free faculties
   const fetchFreeFaculties = async () => {
     if (!selectedDay || selectedPeriods.length === 0) {
       alert("Please select a day and at least one period.");
@@ -32,7 +28,7 @@ function DateSelector() {
       setFacultyList([]);
 
       const response = await axios.get(`http://localhost:4000/schedules/free`, {
-        params: { day: selectedDay, period: selectedPeriods.join(",") }, // Send periods as comma-separated
+        params: { day: selectedDay, period: selectedPeriods.join(",") },
       });
 
       setFacultyList(response.data);
@@ -43,17 +39,15 @@ function DateSelector() {
   };
 
   return (
-    <div className="p-6 max-w-md mx-auto text-center">
-      <h2 className="text-2xl font-bold mb-4">Select Day & Periods</h2>
+    <div className="date-selector-container">
+      <h2 className="date-selector-title">Select Day & Periods</h2>
 
       {/* Day Selection */}
-      <div className="flex flex-wrap justify-center gap-2 mb-4">
+      <div className="date-selector-days">
         {days.map((day, index) => (
           <button
             key={index}
-            className={`px-4 py-2 rounded-lg border ${
-              selectedDay === day ? "bg-blue-500 text-white" : "bg-gray-200"
-            }`}
+            className={`date-selector-day-btn ${selectedDay === day ? "active" : ""}`}
             onClick={() => setSelectedDay(day)}
           >
             {day}
@@ -61,14 +55,12 @@ function DateSelector() {
         ))}
       </div>
 
-      {/* Period Selection (Multi-Select) */}
-      <div className="flex justify-center gap-2 mb-4">
+      {/* Period Selection */}
+      <div className="date-selector-periods">
         {periods.map((period) => (
           <button
             key={period}
-            className={`w-12 h-12 flex items-center justify-center rounded-lg border ${
-              selectedPeriods.includes(period) ? "bg-green-500 text-white" : "bg-gray-200"
-            }`}
+            className={`date-selector-period-btn ${selectedPeriods.includes(period) ? "active" : ""}`}
             onClick={() => togglePeriod(period)}
           >
             {period}
@@ -77,26 +69,23 @@ function DateSelector() {
       </div>
 
       {/* Fetch Free Faculties Button */}
-      <button
-        onClick={fetchFreeFaculties}
-        className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
-      >
+      <button onClick={fetchFreeFaculties} className="date-selector-fetch-btn">
         Get Free Faculties
       </button>
 
       {/* Display Error Message */}
-      {error && <p className="text-red-500 mt-4">{error}</p>}
+      {error && <p className="date-selector-error">{error}</p>}
 
       {/* Display Faculty List */}
       {facultyList.length > 0 && (
-        <div className="mt-4">
-          <h3 className="text-lg font-bold mb-2">Available Faculties:</h3>
-          <ul className="text-left">
+        <div className="date-selector-faculty-list">
+          <h3 className="date-selector-faculty-title">Available Faculties:</h3>
+          <ul>
             {facultyList.map((faculty, index) => (
-              <li key={index} className="p-2 border-b">
-                <p className="font-semibold">{faculty.name}</p>
-                <p className="text-sm text-gray-600">{faculty.department}</p>
-                <p className="text-sm text-gray-500">{faculty.email}</p>
+              <li key={index} className="date-selector-faculty-item">
+                <p className="date-selector-faculty-name">{faculty.name}</p>
+                <p className="date-selector-faculty-details">{faculty.department}</p>
+                <p className="date-selector-faculty-details">{faculty.email}</p>
               </li>
             ))}
           </ul>
@@ -106,4 +95,4 @@ function DateSelector() {
   );
 }
 
-export default DateSelector;
+export default Date;

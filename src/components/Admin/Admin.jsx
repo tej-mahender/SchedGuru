@@ -63,7 +63,7 @@ function Admin() {
             <p className="text-danger">No Rooms Available</p>
           ) : (
             availableRooms.map((room) => (
-              <button key={room.id} className="room-btn btn" onClick={() => handleRoomClick(room)}>
+              <button key={room.id} className="room-btn" onClick={() => handleRoomClick(room)}>
                 {room.name} (Capacity: {room.capacity})
               </button>
             ))

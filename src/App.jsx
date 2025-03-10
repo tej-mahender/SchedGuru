@@ -1,15 +1,14 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import Main from './components/Main/Main'
 import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
 import RootLayout from './RootLayout'
 import Faculty from './components/Faculty/Faculty'
 import Admin from './components/Admin/Admin'
+import SeatingSchedule from './components/SeatingSchedule/SeatingSchedule';
 import Login from './components/Login/Login'
-import Rooms from './components/Rooms/Rooms'
 import Date from './components/Date/Date'
+import SeatinPlan from './components/SeatingPlan/SeatingPlan'
 import 'bootstrap/dist/css/bootstrap.min.css';
 const browserRouter = createBrowserRouter([
   {
@@ -31,11 +30,14 @@ const browserRouter = createBrowserRouter([
       },
       {
         path: "/rooms",
-        element:<Rooms />
+        // element:<Rooms />
+        element:<SeatingSchedule/>
       },
       {
         path: "/admin",
-        element:<Admin /> 
+        // element:<Admin /> 
+        element:<SeatinPlan/>
+
       },
       {
         path: "/back",
@@ -48,7 +50,7 @@ const browserRouter = createBrowserRouter([
     ],
   },
 ]);
-function App() {
-  return <RouterProvider router={browserRouter} />;
-}
+  function App() {
+    return <RouterProvider router={browserRouter} />;
+  }
 export default App

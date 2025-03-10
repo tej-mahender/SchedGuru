@@ -1,0 +1,31 @@
+.class-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 10px;
+}
+
+.classroom-box {
+    width: 150px;
+    padding: 15px;
+    background-color: #ffebcc;
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    font-weight: bold;
+    border: 2px solid transparent;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.classroom-box:hover {
+    background-color: #ffd699;
+}
+
+.classroom-box.selected {
+    background-color: #ff9800;
+    color: white;
+    border: 2px solid #e68a00;
+}

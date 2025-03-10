@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Faculty.css';
-import Search from '../Search/Search';
+// import Search from '../Search/Search';
 import FacultySearch from '../facultySearch/FacultySearch';
 
 function Faculty() {

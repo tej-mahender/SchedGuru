@@ -24,19 +24,6 @@ const FacultySearch = () => {
     fetchFaculties();
   }, []);
 
-  // Filter faculties based on search input
-  useEffect(() => {
-    if (!searchQuery.trim()) {
-      setFilteredFaculties([]);
-    } else {
-      setFilteredFaculties(
-        faculties.filter((faculty) =>
-          faculty.name.toLowerCase().includes(searchQuery.toLowerCase())
-        )
-      );
-    }
-  }, [searchQuery, faculties]);
-
   // Fetch schedule when a faculty is selected
   const fetchSchedule = async (empID) => {
     setLoading(true);
@@ -72,6 +59,17 @@ const FacultySearch = () => {
     setError(null);
   };
 
+  // Handle search on Enter key press
+  const handleSearch = (e) => {
+    if (e.key === "Enter") {
+      setFilteredFaculties(
+        faculties.filter((faculty) =>
+          faculty.name.toLowerCase().includes(searchQuery.toLowerCase())
+        )
+      );
+    }
+  };
+
   // Define period slots
   const periods = [
     "9:00 - 10:00",
@@ -89,28 +87,25 @@ const FacultySearch = () => {
       <h2 className="text-2xl font-bold mb-4">Search Faculty</h2>
       <input
         type="text"
-        placeholder="Enter faculty name..."
+        placeholder="Enter faculty name and press enter"
         className="w-full p-2 border border-gray-300 rounded-lg"
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
+        onKeyDown={handleSearch} // Trigger search only on Enter key press
       />
       {error && <p className="text-red-500 mt-2">{error}</p>}
-      {searchQuery && (
+      {filteredFaculties.length > 0 && (
         <ul className="mt-4">
-          {filteredFaculties.length > 0 ? (
-            filteredFaculties.map((faculty) => (
-              <li
-                key={faculty.empID}
-                className="p-2 border-b cursor-pointer hover:bg-blue-100"
-                onClick={() => handleSelectFaculty(faculty)}
-              >
-                <p className="text-lg font-semibold">{faculty.name}</p>
-                <p className="text-sm text-gray-600">{faculty.department}</p>
-              </li>
-            ))
-          ) : (
-            <p className="text-gray-500 mt-2">No faculty found.</p>
-          )}
+          {filteredFaculties.map((faculty) => (
+            <li
+              key={faculty.empID}
+              className="p-2 border-b cursor-pointer hover:bg-blue-100"
+              onClick={() => handleSelectFaculty(faculty)}
+            >
+              <p className="text-lg font-semibold">{faculty.name}</p>
+              <p className="text-sm text-gray-600">{faculty.department}</p>
+            </li>
+          ))}
         </ul>
       )}
 

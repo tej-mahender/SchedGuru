@@ -1,0 +1,8 @@
+/* Background only for main page */
+.main.main-page {
+    background-image: url('./Main.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  

@@ -3,7 +3,8 @@ import './Main.css'
 import { Link } from 'react-router-dom'
 function Main() {
   return (
-      <div className="main">
+     <div className='main-container'>
+       <div className="main">
        <nav>
       <ul className="nav-links">
         <li className='faculty me-2'><Link to="/faculty">Faculty</Link></li>
@@ -17,6 +18,7 @@ function Main() {
         <p>"Plan your schedule like a pro."</p>
       </blockquote>
     </div>
+     </div>
   )
 }
 

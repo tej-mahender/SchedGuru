@@ -143,4 +143,9 @@
     width: 100%;
     text-align: center;
   }
+    .main-container {
+      background-size: contain; 
+      background-position: center;
+      background-attachment: scroll; 
+    }
 }

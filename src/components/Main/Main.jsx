@@ -15,7 +15,7 @@ function Main() {
     </nav>
       <h1 className="schedguru">SchedGuru</h1>
       <blockquote className="blockquote text-end">
-        <p>"Plan your schedule like a pro."</p>
+        <p>"Smart scheduling for stress-free exams!"</p>
       </blockquote>
     </div>
      </div>

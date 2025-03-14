@@ -6,7 +6,8 @@ import RootLayout from './RootLayout'
 import Faculty from './components/Faculty/Faculty'
 import Admin from './components/Admin/Admin'
 import SeatingSchedule from './components/SeatingSchedule/SeatingSchedule';
-import Login from './components/Login/Login'
+import Login from './components/login/Login'
+import Register from './components/Register/Register';
 import Date from './components/Date/Date'
 import SeatinPlan from './components/SeatingPlan/SeatingPlan'
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -23,6 +24,10 @@ const browserRouter = createBrowserRouter([
       {
         path: "/login",
         element:<Login/>
+      },
+      {
+        path: "/register",
+        element:<Register/>
       },
       {
         path: "/faculty",

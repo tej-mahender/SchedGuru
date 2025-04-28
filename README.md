@@ -3,6 +3,7 @@
 SchedGuru is a smart, web-based scheduling and exam seating management system built with the MERN stack. It streamlines academic operations by offering real-time faculty schedules, faculty availability checkers, and automated exam seating plans — all in one platform.
 
 🔗 Live Site: [SchedGuru](https://sched-guru.vercel.app/)
+
 🔗 Documentation: [PDF](https://drive.google.com/file/d/1qTG8G--0tbkbgq1XMti3Y4nltP_XaFCJ/view)
 
 ## Features
